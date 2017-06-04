@@ -1,4 +1,7 @@
 # MavRos-takeoff-n-land
+## How to establish the environment?
+https://docs.google.com/document/d/1j-0oNPsMVonIDlRqUEddmXbyBflnM9hX7zPVfSpe64U/edit?usp=sharing
+
 ## How to run the code?
 
 The Gazebo should be the one with ROS Kinetic, which is version 7.7.

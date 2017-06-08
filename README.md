@@ -94,5 +94,7 @@ rosrun ex1 takeoff_n_land
 ![Alt text](/final_res.png?raw=true "Screenshot of successful run")
 
 [1] http://wiki.ros.org/kinetic/Installation/Ubuntu
+
 [2] https://dev.px4.io/en/simulation/ros_interface.html
+
 [3] https://dev.px4.io/en/simulation/gazebo.html

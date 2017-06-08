@@ -18,7 +18,7 @@ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 ## Download and run PX4 Gazebo simulator
-# prepare tools for building PX4
+Prepare tools for building PX4
 ```
 sudo apt-get update
 sudo apt-get install python-argparse git-core wget zip python-empy qtcreator cmake build-essential genromfs -y
@@ -56,8 +56,11 @@ run following command so that rosrun can find our new node
 ```
 source ./devel/setup.bash 
 ```
-
-run ROS node
+Open another two terminals, inside one you run
+```
+roscore
+```
+inside another, run the ROS node you just built
 ```
 rosrun ex1 takeoff_n_land 
 ```

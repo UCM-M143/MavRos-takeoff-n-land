@@ -39,6 +39,9 @@ Wait until downloading finish correctly, then run
 ```
 make posix_sitl_default gazebo
 ```
+A window will pop up shows a quadcoter
+![Alt text](MavRos-takeoff-n-land/px4_gazebo.png?raw=true "Screenshot of successful run")
+
 ## Create ROS works space, make and run our ROS node
 ```
 cd ~

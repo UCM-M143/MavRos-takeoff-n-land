@@ -74,16 +74,23 @@ cd ~/catkin_ws
 catkin_make
 ```
 run following command so that rosrun can find our new nodes in your ```ex1``` package
-```
-source ./devel/setup.bash 
-```
-Open another two terminals, inside one you run
+### Run roscore, mavros and this rosnodde
+
+In the terminal you have, run
 ```
 roscore
 ```
+Open another two terminals, inside one you run
+```
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14540"
+```
 inside another, run the ROS node you just built
 ```
+cd ~/catkin_ws
+source ./devel/setup.bash 
 rosrun ex1 takeoff_n_land 
 ```
 
 [1] http://wiki.ros.org/kinetic/Installation/Ubuntu
+[2] https://dev.px4.io/en/simulation/ros_interface.html
+[3] https://dev.px4.io/en/simulation/gazebo.html

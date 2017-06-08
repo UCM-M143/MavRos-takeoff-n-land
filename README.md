@@ -75,7 +75,7 @@ cd ~/catkin_ws
 catkin_make
 ```
 run following command so that rosrun can find our new nodes in your ```ex1``` package
-### Run roscore, mavros and this rosnodde
+### Run roscore, mavros and this ros nodde
 
 In the terminal you have, run
 ```

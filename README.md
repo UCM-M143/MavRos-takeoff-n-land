@@ -30,6 +30,7 @@ Download source files from Github
 ```
 cd /tmp
 mkdir me190
+cd me190
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
 git submodule update --init --recursive
@@ -45,14 +46,31 @@ mkdir catkin_ws
 cd  catkin_ws
 mkdir src
 cd src
-git clone
-cd ..
 ```
-build this ROS node
+Create an empty ROS package called ```ex1``` node which depends on ```mavros```. It will create CMakeLists.txt and packages.xml for you.
 ```
+catkin_create_pkg ex1 mavros
+```
+Then you can pull the given c++ source code to your ```ex1``` package folder
+```
+cd ex1/
+wget https://github.com/UCM-ME190/MavRos-takeoff-n-land/raw/master/takeoff_n_land.cpp
+```
+After that, let's change the generated CMakeLists.txt file so that ros knows how to build this package
+```
+gedit CMakeLists.txt
+```
+Put those two lines at the end of the CMakeLists.txt file.
+```
+add_executable(takeoff_n_land takeoff_n_land.cpp)
+target_link_libraries(takeoff_n_land ${catkin_LIBRARIES})
+```
+Here you have finished modifing files. Build this ROS package by
+```
+cd ~/catkin_ws
 catkin_make
 ```
-run following command so that rosrun can find our new node
+run following command so that rosrun can find our new nodes in your ```ex1``` package
 ```
 source ./devel/setup.bash 
 ```
@@ -65,39 +83,4 @@ inside another, run the ROS node you just built
 rosrun ex1 takeoff_n_land 
 ```
 
-
-## How to run the code?
-
-The Gazebo should be the one with ROS Kinetic, which is version 7.7.
-```
-cd ~
-mkdir catkin
-cd  catkin
-
-mkdir src
-
-cd src/
-catkin_create_pkg ex1 mavros
-
-cd ..
-catkin_make
-cd src/ex1/
-wget https://github.com/UCM-ME190/MavRos-takeoff-n-land/raw/master/takeoff_n_land.cpp
-
-gedit CMakeLists.txt
-```
-Put those two lines at the end of the CMakeLists.txt file.
-```
-add_executable(takeoff_n_land takeoff_n_land.cpp)
-target_link_libraries(takeoff_n_land ${catkin_LIBRARIES})
-```
-
-```
-cd ~/catkin/
-catkin_make
-source ./devel/setup.bash 
-
-rosrun ex1 takeoff_n_land 
-
-```
 [1] http://wiki.ros.org/kinetic/Installation/Ubuntu

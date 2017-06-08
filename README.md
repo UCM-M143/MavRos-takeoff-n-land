@@ -30,6 +30,7 @@ Download source files from Github
 ```
 cd /tmp
 mkdir me190
+cd me190
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
 git submodule update --init --recursive

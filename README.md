@@ -26,7 +26,7 @@ sudo apt-get install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-8
 sudo apt-get install python-pip
 sudo -H pip install pandas jinja2
 ```
-
+Download source files from Github
 ```
 cd /tmp
 mkdir me190
@@ -34,11 +34,11 @@ git clone https://github.com/PX4/Firmware.git
 cd Firmware
 git submodule update --init --recursive
 ```
-Wait until it download finish correctly, then run
+Wait until downloading finish correctly, then run
 ```
 make posix_sitl_default gazebo
 ```
-## Create works space for ROS
+## Create ROS works space, make and run our ROS node
 ```
 cd ~
 mkdir catkin_ws

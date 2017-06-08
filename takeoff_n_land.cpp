@@ -124,6 +124,34 @@ int main(int argc, char **argv)
     }
     ROS_INFO("second way point finished!");
 
+    // go to the third waypoint
+    pose.pose.position.x = 1;
+    pose.pose.position.y = 1;
+    pose.pose.position.z = FLIGHT_ALTITUDE;
+    //send setpoints for 10 seconds
+    ROS_INFO("going to third way point");
+    for(int i = 0; ros::ok() && i < 10*20; ++i){
+
+      local_pos_pub.publish(pose);
+      ros::spinOnce();
+      rate.sleep();
+    }
+    ROS_INFO("third way point finished!");
+    
+    // go to the forth waypoint
+    pose.pose.position.x = 1;
+    pose.pose.position.y = 0;
+    pose.pose.position.z = FLIGHT_ALTITUDE;
+    //send setpoints for 10 seconds
+    ROS_INFO("going to forth way point");
+    for(int i = 0; ros::ok() && i < 10*20; ++i){
+
+      local_pos_pub.publish(pose);
+      ros::spinOnce();
+      rate.sleep();
+    }
+    ROS_INFO("forth way point finished!");
+    
     pose.pose.position.x = 0;
     pose.pose.position.y = 0;
     pose.pose.position.z = FLIGHT_ALTITUDE;

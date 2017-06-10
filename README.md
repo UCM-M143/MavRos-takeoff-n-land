@@ -43,7 +43,7 @@ A window will pop up shows a quadcoter
 
 ![Alt text](/px4_gazebo.png?raw=true "Screenshot of successful run")
 
-## Create ROS works space, make and run our ROS node
+## Create ROS work space, make and run our ROS node
 ```
 cd ~
 mkdir catkin_ws

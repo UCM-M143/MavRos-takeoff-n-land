@@ -44,6 +44,7 @@ A window will pop up shows a quadcoter
 ![Alt text](/px4_gazebo.png?raw=true "Screenshot of successful run")
 
 ## Create ROS work space, make and run our ROS node
+Open a new Terminal and run:
 ```
 cd ~
 mkdir catkin_ws
